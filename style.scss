@@ -1,0 +1,93 @@
+@mixin centre_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+@mixin button-style{
+    background-color: $container_color;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 5px 10px 3px rgba(32, 32, 32, 0.5);
+    transition: box-shadow 0.3s;
+}
+$container_color : #92bdd9;
+$main_color : #63799e;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    @include centre_div();
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    background-color: $container_color;
+    position: relative;
+}
+.nav{
+    width: 100vw;
+    height: 80px;
+    @include centre_div();
+    position: absolute;
+    top: 0;
+    background-color: $main_color;
+    font: {
+        size: 28px;
+        family : 'roboto' , sans-serif;
+        weight: bold;
+    }
+    letter-spacing: 5px;
+    word-spacing: 7px;
+    font-style: italic;
+    box-shadow: 0 0 5px rgba(0 ,0, 0, 0.5);
+    text-shadow: 0 15px 5px rgba(0,0,0,0.5);
+}
+
+.main{
+    width: 50vw;
+    height: 50vh;
+    @include centre_div();
+    background-color: $main_color;
+    flex-direction: column;
+    border-radius: 12px;
+}
+.message{
+    margin-bottom: 40px;
+    font: {
+        family : 'roboto' , sans-serif;
+    }
+    text: {
+        shadow : 0 6px 3px rgba(0,0,0,0.5);
+    }
+}
+.submission{
+    padding: 40px;
+}
+
+.submit-btn{
+    @include button-style();
+    margin-right: 80px;
+}
+
+.next-btn{
+    @include button-style();
+}
+.submit-btn:active , .next-btn:active{
+    box-shadow: 2px 5px 3px rgba(32, 32, 32, 0.5);
+}
+.input{
+    width: 20vw;
+    height: 5vh;
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+    box-shadow: 5px 10px 3px rgba(32, 32, 32, 0.5);
+}
+.input:focus{
+    outline: none;
+}
